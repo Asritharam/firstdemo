@@ -1,0 +1,18 @@
+import org.openqa.selenium.*;
+	import org.openqa.selenium.chrome.ChromeDriver;
+	import org.openqa.selenium.firefox.FirefoxDriver;
+public class SampleSelenium {
+			public static void main(String[] agrs) throws InterruptedException
+		{
+			System.setProperty("webdriver.gecko.driver", "C:\\Users\\asritharamr\\eclipse-workspace-PicnicSelenium\\SeleniumProject\\drivers\\geckodriver.exe");
+			WebDriver driver = new FirefoxDriver();//create instance of crome driver
+			driver.get("http://www.google.com");//method used to URL and then it will wait till whole page gets loaded
+			Thread.sleep(4000);// its sleep time (waiting time)
+			WebElement search= driver.findElement(By.name("q"));
+			search.sendKeys("coimbatore");
+			search.submit();
+			Thread.sleep(5000);
+			driver.quit();//quiting(close the browser and terminates  web driver session )
+			
+
+}
